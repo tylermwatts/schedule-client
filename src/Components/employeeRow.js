@@ -1,16 +1,16 @@
-import React from './node_modules/react';
+import React from 'react';
 
 export const EmployeeRow = ({ employee }) => {
 	return (
-		<tr>
-			<td>{employee.name}</td>
-			<td>{employee.monday}</td>
-			<td>{employee.tuesday}</td>
-			<td>{employee.wednesday}</td>
-			<td>{employee.thursday}</td>
-			<td>{employee.friday}</td>
-			<td>{employee.saturday}</td>
-			<td>{employee.sunday}</td>
-		</tr>
+		console.log(employee) || (
+			<tr>
+				<td>{employee.name}</td>
+				{Object.keys(employee.schedule).map(k => (
+					<td key={k}>{`${employee.schedule[k].hours}, ${
+						employee.schedule[k].assignment
+					}`}</td>
+				))}
+			</tr>
+		)
 	);
 };
