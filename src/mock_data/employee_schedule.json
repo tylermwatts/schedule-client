@@ -1,0 +1,37 @@
+{
+	"employees": [
+		{
+			"name": "Tyler Watts",
+			"schedule": {
+				"monday": {
+					"hours": "2 - 10",
+					"assignment": "Manager"
+				},
+				"tuesday": {
+					"hours": "OFF",
+					"assignment": null
+				},
+				"wednesday": {
+					"hours": "8:30 - 5",
+					"assignment": "Manager"
+				},
+				"thursday": {
+					"hours": "8:30 - 5",
+					"assignment": "Manager"
+				},
+				"friday": {
+					"hours": "8:30 - 5",
+					"assignment": "Manager"
+				},
+				"saturday": {
+					"hours": "2 - 10",
+					"assignment": "Manager"
+				},
+				"sunday": {
+					"hours": "2 - 10",
+					"assignment": "Manager"
+				}
+			}
+		}
+	]
+}
