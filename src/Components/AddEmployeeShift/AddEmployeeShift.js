@@ -116,6 +116,7 @@ const times = [
 ];
 
 const assignments = [
+  'OFF',
   'Manager',
   'Book Desk',
   'Project',
