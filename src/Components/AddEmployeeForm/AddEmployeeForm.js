@@ -16,6 +16,7 @@ class AddEmployeeForm extends Component {
 
   handleScheduleChange = newSchedule => {
     this.props.addEmployee({ name: this.state.name, schedule: newSchedule });
+    this.setState({ name: '' });
   };
 
   render() {

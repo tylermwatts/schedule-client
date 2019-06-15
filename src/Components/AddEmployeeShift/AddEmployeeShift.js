@@ -5,7 +5,6 @@ export default function AddEmployeeShift({ schedule, scheduleChange }) {
   const [newSchedule, setNewSchedule] = useState({ ...schedule });
 
   const handleSubmit = e => {
-    e.preventDefault();
     scheduleChange(newSchedule);
   };
 
@@ -88,6 +87,7 @@ const days = {
 };
 
 const times = [
+  'OFF',
   '7',
   '7:30',
   '8',

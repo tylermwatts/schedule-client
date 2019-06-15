@@ -8,10 +8,12 @@ export default function EmployeeRow({ employee }) {
       {Object.keys(employee.schedule).map(e => (
         <td className={styles.td} key={e}>{`${
           employee.schedule[e].start.value
-            ? employee.schedule[e].start.value +
-              ' - ' +
-              employee.schedule[e].end.value +
-              ', '
+            ? employee.schedule[e].assignment.value === 'OFF'
+              ? ''
+              : employee.schedule[e].start.value +
+                ' - ' +
+                employee.schedule[e].end.value +
+                ', '
             : ''
         }${employee.schedule[e].assignment.value}`}</td>
       ))}
