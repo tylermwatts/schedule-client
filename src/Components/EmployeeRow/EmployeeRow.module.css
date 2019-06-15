@@ -1,0 +1,17 @@
+.td {
+  border: 1px solid black;
+  padding: 9px;
+}
+
+.tr {
+  background-color: #b9b9b9;
+  margin: 9px;
+  padding: 9px;
+}
+
+.employeeName {
+  border: 1px solid black;
+  padding: 9px;
+  font-weight: bold;
+  background-color: #ffcc89;
+}

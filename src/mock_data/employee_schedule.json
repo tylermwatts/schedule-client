@@ -28,7 +28,73 @@
 					"assignment": "Manager"
 				},
 				"sunday": {
+					"hours": "OFF",
+					"assignment": null
+				}
+			}
+		},
+		{
+			"name": "Ben Stonick",
+			"schedule": {
+				"monday": {
 					"hours": "2 - 10",
+					"assignment": "Manager"
+				},
+				"tuesday": {
+					"hours": "2 - 10",
+					"assignment": "Manager"
+				},
+				"wednesday": {
+					"hours": "8:30 - 5",
+					"assignment": "Manager"
+				},
+				"thursday": {
+					"hours": "OFF",
+					"assignment": null
+				},
+				"friday": {
+					"hours": "8:30 - 5",
+					"assignment": "Manager"
+				},
+				"saturday": {
+					"hours": "2 - 10",
+					"assignment": "Manager"
+				},
+				"sunday": {
+					"hours": "OFF",
+					"assignment": null
+				}
+			}
+		},
+		{
+			"name": "Arbor Barrow",
+			"schedule": {
+				"monday": {
+					"hours": "OFF",
+					"assignment": null
+				},
+				"tuesday": {
+					"hours": "OFF",
+					"assignment": null
+				},
+				"wednesday": {
+					"hours": "2 - 10",
+					"assignment": "Manager"
+				},
+				"thursday": {
+					"hours": "2 - 10",
+					"assignment": "Manager"
+				},
+				"friday": {
+					"hours": "2 - 10",
+					"assignment": "Manager"
+				},
+				"saturday": {
+					"hours": "8:30 - 5",
+					"assignment": "Manager"
+				},
+				"sunday": {
+					"hours": "11 - 7",
 					"assignment": "Manager"
 				}
 			}
