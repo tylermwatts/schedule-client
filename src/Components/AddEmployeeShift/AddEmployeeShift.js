@@ -1,30 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as styles from './AddEmployeeShift.module.css';
 
-export const AddEmployeeShift = () => {
+export default function AddEmployeeShift({ schedule, scheduleChange }) {
+  const [newSchedule, setNewSchedule] = useState({ ...schedule });
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    scheduleChange(newSchedule);
+  };
+
+  const handleChange = (e, day, key) => {
+    setNewSchedule({
+      ...newSchedule,
+      [day]: {
+        ...newSchedule[day],
+        [key]: { value: e.target.value }
+      }
+    });
+  };
+
   return (
     <>
       {Object.keys(days).map((d, i) => (
         <div key={i} className={styles.shiftRow}>
           <label key={d}>{`${days[d]}: `}</label>
-          <select name="start">
-            <option value={null}>-- Choose a start time --</option>
+          <select
+            name="start"
+            required
+            defaultValue=""
+            onChange={e => handleChange(e, d, 'start')}
+          >
+            <option value="" disabled>
+              -- Choose a start time --
+            </option>
             {times.map(t => (
               <option key={t} value={t}>
                 {t}
               </option>
             ))}
           </select>
-          <select name="end">
-            <option value={null}>-- Choose an end time --</option>
+          <select
+            name="end"
+            required
+            defaultValue=""
+            onChange={e => handleChange(e, d, 'end')}
+          >
+            <option value="" disabled>
+              -- Choose an end time --
+            </option>
             {times.map(t => (
               <option key={t} value={t}>
                 {t}
               </option>
             ))}
           </select>
-          <select name="assignment">
-            <option value={null}>-- Choose a task --</option>
+          <select
+            name="assignment"
+            required
+            defaultValue=""
+            onChange={e => handleChange(e, d, 'assignment')}
+          >
+            <option value="" disabled>
+              -- Choose a task --
+            </option>
             {assignments.map(a => (
               <option key={a} value={a}>
                 {a}
@@ -34,9 +72,10 @@ export const AddEmployeeShift = () => {
           <br />
         </div>
       ))}
+      <button onClick={handleSubmit}>Submit</button>
     </>
   );
-};
+}
 
 const days = {
   monday: 'Monday',

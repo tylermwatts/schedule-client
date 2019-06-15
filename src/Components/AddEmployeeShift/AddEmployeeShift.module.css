@@ -1,11 +1,8 @@
 .shiftRow {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin: 0.25em;
+  margin: 1em;
 }
 
 label,
 select {
-  flex-grow: 1;
+  margin: 0.25em;
 }

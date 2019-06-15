@@ -4,98 +4,81 @@
 			"name": "Tyler Watts",
 			"schedule": {
 				"monday": {
-					"hours": "2 - 10",
-					"assignment": "Manager"
+					"start": {
+						"value": "2"
+					},
+					"end": {
+						"value": "10"
+					},
+					"assignment": {
+						"value": "Manager"
+					}
 				},
 				"tuesday": {
-					"hours": "OFF",
-					"assignment": null
+					"start": {
+						"value": null
+					},
+					"end": {
+						"value": null
+					},
+					"assignment": {
+						"value": "OFF"
+					}
 				},
 				"wednesday": {
-					"hours": "8:30 - 5",
-					"assignment": "Manager"
+					"start": {
+						"value": "8:30"
+					},
+					"end": {
+						"value": "5"
+					},
+					"assignment": {
+						"value": "Manager"
+					}
 				},
 				"thursday": {
-					"hours": "8:30 - 5",
-					"assignment": "Manager"
+					"start": {
+						"value": "8:30"
+					},
+					"end": {
+						"value": "5"
+					},
+					"assignment": {
+						"value": "Manager"
+					}
 				},
 				"friday": {
-					"hours": "8:30 - 5",
-					"assignment": "Manager"
+					"start": {
+						"value": "8:30"
+					},
+					"end": {
+						"value": "5"
+					},
+					"assignment": {
+						"value": "Manager"
+					}
 				},
 				"saturday": {
-					"hours": "2 - 10",
-					"assignment": "Manager"
+					"start": {
+						"value": "2"
+					},
+					"end": {
+						"value": "10"
+					},
+					"assignment": {
+						"value": "Manager"
+					}
 				},
 				"sunday": {
-					"hours": "OFF",
-					"assignment": null
-				}
-			}
-		},
-		{
-			"name": "Ben Stonick",
-			"schedule": {
-				"monday": {
-					"hours": "2 - 10",
-					"assignment": "Manager"
-				},
-				"tuesday": {
-					"hours": "2 - 10",
-					"assignment": "Manager"
-				},
-				"wednesday": {
-					"hours": "8:30 - 5",
-					"assignment": "Manager"
-				},
-				"thursday": {
-					"hours": "OFF",
-					"assignment": null
-				},
-				"friday": {
-					"hours": "8:30 - 5",
-					"assignment": "Manager"
-				},
-				"saturday": {
-					"hours": "2 - 10",
-					"assignment": "Manager"
-				},
-				"sunday": {
-					"hours": "OFF",
-					"assignment": null
-				}
-			}
-		},
-		{
-			"name": "Arbor Barrow",
-			"schedule": {
-				"monday": {
-					"hours": "OFF",
-					"assignment": null
-				},
-				"tuesday": {
-					"hours": "OFF",
-					"assignment": null
-				},
-				"wednesday": {
-					"hours": "2 - 10",
-					"assignment": "Manager"
-				},
-				"thursday": {
-					"hours": "2 - 10",
-					"assignment": "Manager"
-				},
-				"friday": {
-					"hours": "2 - 10",
-					"assignment": "Manager"
-				},
-				"saturday": {
-					"hours": "8:30 - 5",
-					"assignment": "Manager"
-				},
-				"sunday": {
-					"hours": "11 - 7",
-					"assignment": "Manager"
+					"start": {
+						"value": null
+					},
+					"end": {
+						"value": null
+					},
+					"assignment": {
+						"value": "OFF"
+					}
 				}
 			}
 		}

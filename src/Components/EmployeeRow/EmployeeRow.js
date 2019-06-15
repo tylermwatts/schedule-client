@@ -1,17 +1,20 @@
 import React from 'react';
 import * as styles from './EmployeeRow.module.css';
 
-export const EmployeeRow = ({ employee }) => {
+export default function EmployeeRow({ employee }) {
   return (
     <tr className={styles.tr}>
       <td className={styles.employeeName}>{employee.name}</td>
-      {Object.keys(employee.schedule).map(k => (
-        <td className={styles.td} key={k}>{`${employee.schedule[k].hours}${
-          employee.schedule[k].assignment
-            ? ', ' + employee.schedule[k].assignment
+      {Object.keys(employee.schedule).map(e => (
+        <td className={styles.td} key={e}>{`${
+          employee.schedule[e].start.value
+            ? employee.schedule[e].start.value +
+              ' - ' +
+              employee.schedule[e].end.value +
+              ', '
             : ''
-        }`}</td>
+        }${employee.schedule[e].assignment.value}`}</td>
       ))}
     </tr>
   );
-};
+}

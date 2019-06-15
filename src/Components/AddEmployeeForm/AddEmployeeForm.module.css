@@ -2,9 +2,3 @@
   border: 1px solid black;
   padding: 1em;
 }
-
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
