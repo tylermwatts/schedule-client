@@ -1,45 +1,40 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { singleEmployee } from '../../initial_state/';
 import AddEmployeeShift from '../AddEmployeeShift/AddEmployeeShift';
 import * as styles from './AddEmployeeForm.module.css';
 
-class AddEmployeeForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: ''
-    };
-  }
+const AddEmployeeForm = ({ addEmployee }) => {
+  const [name, setName] = useState(singleEmployee.name);
+  const [schedule, setSchedule] = useState(singleEmployee.schedule);
 
-  handleNameChange = e => {
-    this.setState({ name: e.target.value });
+  const handleNameChange = e => {
+    setName(e.target.value);
   };
 
-  handleScheduleChange = newSchedule => {
-    this.props.addEmployee({ name: this.state.name, schedule: newSchedule });
-    this.setState({ name: '' });
+  const handleScheduleChange = newSchedule => {
+    addEmployee({ name: name, schedule: newSchedule });
+    initializeState();
   };
 
-  render() {
-    return (
-      <div className={styles.formBorder}>
-        <h3>Add a new employee</h3>
-        <form>
-          <label>{'Employee Name: '}</label>
-          <input
-            type="text"
-            value={this.state.name}
-            onChange={this.handleNameChange}
-            required
-          />
-          <br />
-          <AddEmployeeShift
-            schedule={this.state.schedule}
-            scheduleChange={this.handleScheduleChange}
-          />
-        </form>
-      </div>
-    );
-  }
-}
+  const initializeState = () => {
+    setName(singleEmployee.name);
+    setSchedule(singleEmployee.schedule);
+  };
+
+  return (
+    <div className={styles.formBorder}>
+      <h3>Add a new employee</h3>
+      <form>
+        <label>{'Employee Name: '}</label>
+        <input type="text" value={name} onChange={handleNameChange} required />
+        <br />
+        <AddEmployeeShift
+          schedule={schedule}
+          scheduleChange={handleScheduleChange}
+        />
+      </form>
+    </div>
+  );
+};
 
 export default AddEmployeeForm;
