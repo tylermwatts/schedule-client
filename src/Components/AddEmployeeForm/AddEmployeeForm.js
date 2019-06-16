@@ -14,6 +14,7 @@ const AddEmployeeForm = ({ addEmployee }) => {
   const handleScheduleChange = newSchedule => {
     addEmployee({ name: name, schedule: newSchedule });
     initializeState();
+    document.getElementById('add-employee-form').reset();
   };
 
   const initializeState = () => {
@@ -24,7 +25,7 @@ const AddEmployeeForm = ({ addEmployee }) => {
   return (
     <div className={styles.formBorder}>
       <h3>Add a new employee</h3>
-      <form>
+      <form id="add-employee-form">
         <label>{'Employee Name: '}</label>
         <input type="text" value={name} onChange={handleNameChange} required />
         <br />

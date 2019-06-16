@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as styles from './AddEmployeeShift.module.css';
 
-export default function AddEmployeeShift({ schedule, scheduleChange }) {
+const AddEmployeeShift = ({ schedule, scheduleChange }) => {
   const [newSchedule, setNewSchedule] = useState({ ...schedule });
 
   const handleSubmit = e => {
@@ -74,7 +74,9 @@ export default function AddEmployeeShift({ schedule, scheduleChange }) {
       <button onClick={handleSubmit}>Submit</button>
     </>
   );
-}
+};
+
+export default AddEmployeeShift;
 
 const days = {
   monday: 'Monday',

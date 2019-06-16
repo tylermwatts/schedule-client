@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './EmployeeRow.module.css';
 
-export default function EmployeeRow({ employee }) {
+const EmployeeRow = ({ employee }) => {
   return (
     <tr className={styles.tr}>
       <td className={styles.employeeName}>{employee.name}</td>
@@ -19,4 +19,6 @@ export default function EmployeeRow({ employee }) {
       ))}
     </tr>
   );
-}
+};
+
+export default EmployeeRow;

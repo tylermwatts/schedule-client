@@ -4,7 +4,7 @@ import AddEmployeeForm from '../AddEmployeeForm/AddEmployeeForm';
 import EmployeeRow from '../EmployeeRow/EmployeeRow';
 import * as styles from './ScheduleTable.module.css';
 
-export const ScheduleTable = () => {
+const ScheduleTable = () => {
   const [employees, setEmployees] = useState([...data.employees]);
 
   const addEmployee = newEmployee => {
@@ -40,3 +40,5 @@ export const ScheduleTable = () => {
     </div>
   );
 };
+
+export default ScheduleTable;
