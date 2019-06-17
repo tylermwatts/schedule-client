@@ -38,7 +38,9 @@ const EmployeeRow = ({ employee }) => {
     <tr className={styles.tr}>
       <td className={styles.employeeName}>{employee.name}</td>
       {Object.keys(employee.schedule).map(d =>
-        employee.schedule[d].assignment2.value &&
+        employee.schedule[d].shift1.value &&
+        employee.schedule[d].shift1.value !== 'OFF' &&
+        employee.schedule[d].shift2.value &&
         employee.schedule[d].shift2.value !== 'OFF' ? (
           <td className={styles.tdSplit} key={d}>
             <div
@@ -64,10 +66,14 @@ const EmployeeRow = ({ employee }) => {
           </td>
         ) : (
           <td
-            className={[
-              styles.td,
-              styles[getBgColor(employee.schedule[d].assignment1.value)]
-            ].join(' ')}
+            className={
+              employee.schedule[d].shift1.value === 'OFF'
+                ? styles.td
+                : [
+                    styles.td,
+                    styles[getBgColor(employee.schedule[d].assignment1.value)]
+                  ].join(' ')
+            }
             key={d}
           >
             {employee.schedule[d].shift1.value === 'OFF'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { singleEmployee } from '../../initial_state/';
-import AddEmployeeShift from '../AddEmployeeShift/AddEmployeeShift';
+import AddEmployeeShifts from '../AddEmployeeShifts/AddEmployeeShifts';
 import * as styles from './AddEmployeeForm.module.css';
 
 const AddEmployeeForm = ({ addEmployee }) => {
@@ -29,7 +29,7 @@ const AddEmployeeForm = ({ addEmployee }) => {
         <label>{'Employee Name: '}</label>
         <input type="text" value={name} onChange={handleNameChange} required />
         <br />
-        <AddEmployeeShift
+        <AddEmployeeShifts
           schedule={schedule}
           scheduleChange={handleScheduleChange}
         />
