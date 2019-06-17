@@ -2,79 +2,100 @@ export default {
   name: '',
   schedule: {
     monday: {
-      start: {
+      shift1: {
         value: null
       },
-      end: {
+      shift2: {
         value: null
       },
-      assignment: {
+      assignment1: {
+        value: null
+      },
+      assignment2: {
         value: null
       }
     },
     tuesday: {
-      start: {
+      shift1: {
         value: null
       },
-      end: {
+      shift2: {
         value: null
       },
-      assignment: {
+      assignment1: {
+        value: null
+      },
+      assignment2: {
         value: null
       }
     },
     wednesday: {
-      start: {
+      shift1: {
         value: null
       },
-      end: {
+      shift2: {
         value: null
       },
-      assignment: {
+      assignment1: {
+        value: null
+      },
+      assignment2: {
         value: null
       }
     },
     thursday: {
-      start: {
+      shift1: {
         value: null
       },
-      end: {
+      shift2: {
         value: null
       },
-      assignment: {
+      assignment1: {
+        value: null
+      },
+      assignment2: {
         value: null
       }
     },
     friday: {
-      start: {
+      shift1: {
         value: null
       },
-      end: {
+      shift2: {
         value: null
       },
-      assignment: {
+      assignment1: {
+        value: null
+      },
+      assignment2: {
         value: null
       }
     },
     saturday: {
-      start: {
+      shift1: {
         value: null
       },
-      end: {
+      shift2: {
         value: null
       },
-      assignment: {
+      assignment1: {
+        value: null
+      },
+      assignment2: {
         value: null
       }
     },
     sunday: {
-      start: {
+      shift1: {
         value: null
       },
-      end: {
+      shift2: {
         value: null
       },
-      assignment: {
+      assignment1: {
+        value: null
+      },
+      assignment2: {
         value: null
       }
     }

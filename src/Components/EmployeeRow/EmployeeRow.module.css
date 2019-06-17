@@ -1,12 +1,19 @@
 .td {
   border: 1px solid black;
   padding: 9px;
+  font-weight: 500;
+}
+
+.tdSplit {
+  border: 1px solid black;
+  font-weight: 500;
 }
 
 .tr {
   background-color: #b9b9b9;
   margin: 9px;
   padding: 9px;
+  text-align: center;
 }
 
 .employeeName {
@@ -14,4 +21,37 @@
   padding: 9px;
   font-weight: bold;
   background-color: #ffcc89;
+}
+
+.manager {
+  background-color: rgb(255, 145, 0);
+}
+
+.bookDesk {
+  background-color: rgb(247, 230, 0);
+}
+
+.project,
+.largeOrder {
+  background-color: rgb(137, 176, 226);
+}
+
+.register {
+  background-color: rgb(152, 43, 241);
+}
+
+.greeter {
+  background-color: rgb(55, 146, 55);
+}
+
+.registerGreeter {
+  background-color: rgb(245, 49, 0);
+}
+
+.sorter {
+  background-color: aqua;
+}
+
+.splitShift {
+  padding: 9px;
 }

@@ -4,80 +4,101 @@
 			"name": "Tyler Watts",
 			"schedule": {
 				"monday": {
-					"start": {
-						"value": "2"
+					"shift1": {
+						"value": "2 - 10"
 					},
-					"end": {
-						"value": "10"
+					"shift2": {
+						"value": null
 					},
-					"assignment": {
+					"assignment1": {
 						"value": "Manager"
+					},
+					"assignment2": {
+						"value": null
 					}
 				},
 				"tuesday": {
-					"start": {
-						"value": null
-					},
-					"end": {
-						"value": null
-					},
-					"assignment": {
+					"shift1": {
 						"value": "OFF"
+					},
+					"shift2": {
+						"value": null
+					},
+					"assignment1": {
+						"value": null
+					},
+					"assignment2": {
+						"value": null
 					}
 				},
 				"wednesday": {
-					"start": {
-						"value": "8:30"
+					"shift1": {
+						"value": "8:30 - 5"
 					},
-					"end": {
-						"value": "5"
+					"shift2": {
+						"value": null
 					},
-					"assignment": {
+					"assignment1": {
 						"value": "Manager"
+					},
+					"assignment2": {
+						"value": null
 					}
 				},
 				"thursday": {
-					"start": {
-						"value": "8:30"
+					"shift1": {
+						"value": "8:30 - 5"
 					},
-					"end": {
-						"value": "5"
+					"shift2": {
+						"value": null
 					},
-					"assignment": {
+					"assignment1": {
 						"value": "Manager"
+					},
+					"assignment2": {
+						"value": null
 					}
 				},
 				"friday": {
-					"start": {
-						"value": "8:30"
+					"shift1": {
+						"value": "8:30 - 5"
 					},
-					"end": {
-						"value": "5"
+					"shift2": {
+						"value": null
 					},
-					"assignment": {
+					"assignment1": {
 						"value": "Manager"
+					},
+					"assignment2": {
+						"value": null
 					}
 				},
 				"saturday": {
-					"start": {
-						"value": "2"
+					"shift1": {
+						"value": "2 - 10"
 					},
-					"end": {
-						"value": "10"
+					"shift2": {
+						"value": null
 					},
-					"assignment": {
+					"assignment1": {
 						"value": "Manager"
+					},
+					"assignment2": {
+						"value": null
 					}
 				},
 				"sunday": {
-					"start": {
-						"value": null
-					},
-					"end": {
-						"value": null
-					},
-					"assignment": {
+					"shift1": {
 						"value": "OFF"
+					},
+					"shift2": {
+						"value": null
+					},
+					"assignment1": {
+						"value": null
+					},
+					"assignment2": {
+						"value": null
 					}
 				}
 			}
