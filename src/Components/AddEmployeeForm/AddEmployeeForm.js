@@ -45,7 +45,7 @@ const AddEmployeeForm = ({ addEmployee, newEmployee }) => {
               <ShiftSelection
                 key={d}
                 day={d}
-                handleChange={handleScheduleChange}
+                handleScheduleChange={handleScheduleChange}
               />
             );
           })}

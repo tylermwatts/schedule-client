@@ -13,15 +13,19 @@ const ScheduleContainer = () => {
       employeeRepository.getAllEmployees().then(data => setEmployees(data));
     };
     getData();
-  }, []);
+  }, [employees]);
 
   const addEmployee = newEmployee => {
     employeeRepository.addEmployee(newEmployee);
   };
 
+  const deleteEmployee = id => {
+    employeeRepository.deleteEmployee(id);
+  };
+
   return (
     <>
-      <ScheduleTable employees={employees} />
+      <ScheduleTable employees={employees} deleteEmployee={deleteEmployee} />
       <AddEmployeeForm addEmployee={addEmployee} newEmployee={newEmployee} />
     </>
   );

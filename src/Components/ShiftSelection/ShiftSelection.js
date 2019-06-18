@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { assignments, days, shifts } from '../../data';
 import * as styles from './ShiftSelection.module.css';
 
-const ShiftSelection = ({ day, handleChange }) => {
+const ShiftSelection = ({ day, handleScheduleChange }) => {
   const [shift2Disabled, setShift2Disabled] = useState(true);
   const [assignment1Disabled, setAssignment1Disabled] = useState(true);
   const [assignment2Disabled, setAssignment2Disabled] = useState(true);
@@ -19,7 +19,7 @@ const ShiftSelection = ({ day, handleChange }) => {
         setAssignment2Disabled(false);
       }
     }
-    handleChange(e, day, key);
+    handleScheduleChange(e, day, key);
   };
 
   return (

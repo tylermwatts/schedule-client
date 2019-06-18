@@ -2,7 +2,7 @@ import React from 'react';
 import EmployeeRow from '../EmployeeRow/EmployeeRow';
 import * as styles from './ScheduleTable.module.css';
 
-const ScheduleTable = ({ employees }) => {
+const ScheduleTable = ({ employees, deleteEmployee }) => {
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -21,7 +21,13 @@ const ScheduleTable = ({ employees }) => {
             <th className={styles.th}>{'Sunday'}</th>
           </tr>
           {employees.map(e => {
-            return <EmployeeRow key={e.name} employee={e} />;
+            return (
+              <EmployeeRow
+                key={e.name}
+                employee={e}
+                deleteEmployee={deleteEmployee}
+              />
+            );
           })}
         </tbody>
       </table>

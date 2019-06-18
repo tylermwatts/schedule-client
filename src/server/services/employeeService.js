@@ -60,7 +60,7 @@ module.exports = {
   },
 
   deleteEmployee(req, res) {
-    const employeeId = new ObjectID(req.body.id);
+    const employeeId = new ObjectID(req.params.id);
     mongo.connect(url, { useNewUrlParser: true }, (err, client) => {
       assert.equal(null, err);
       const db = client.db('employees');
@@ -68,9 +68,9 @@ module.exports = {
         .findOneAndDelete({ _id: employeeId })
         .then(foundEmployee => {
           if (!foundEmployee.value) {
-            res.send('employee not found');
+            res.json({ error: 'employee not found' });
           } else {
-            res.send(`${foundEmployee.value.name} deleted.`);
+            res.json({ success: `${foundEmployee.value.name} deleted.` });
           }
           client.close();
         });
