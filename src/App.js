@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import ScheduleTable from './Components/ScheduleTable/ScheduleTable';
+import ScheduleContainer from './Components/ScheduleContainer/ScheduleContainer';
 
 function App() {
-  return <ScheduleTable />;
+  return <ScheduleContainer />;
 }
 
 export default App;

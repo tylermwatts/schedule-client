@@ -38,7 +38,7 @@ module.exports = {
       const db = client.db('employees');
       db.collection('employee')
         .insertOne(employee)
-        .then(res.send(`${employee.name} added with ID of: ${employee._id}`));
+        .then(res.json({ employee }));
       client.close();
     });
   },
@@ -54,7 +54,7 @@ module.exports = {
           { _id: new ObjectID(req.body.id) },
           { $set: { name, schedule } }
         )
-        .then(response => res.send(`${response.value.name} has been updated.`));
+        .then(response => res.json(response));
       client.close();
     });
   },
@@ -67,7 +67,6 @@ module.exports = {
       db.collection('employee')
         .findOneAndDelete({ _id: employeeId })
         .then(foundEmployee => {
-          console.log(foundEmployee.value);
           if (!foundEmployee.value) {
             res.send('employee not found');
           } else {

@@ -1,17 +1,8 @@
-import React, { useState } from 'react';
-import * as data from '../../mock_data/employee_schedule.json';
-import AddEmployeeForm from '../AddEmployeeForm/AddEmployeeForm';
+import React from 'react';
 import EmployeeRow from '../EmployeeRow/EmployeeRow';
 import * as styles from './ScheduleTable.module.css';
 
-const ScheduleTable = () => {
-  const [employees, setEmployees] = useState([...data.employees]);
-
-  const addEmployee = newEmployee => {
-    const updatedEmployeeList = [...employees, newEmployee];
-    setEmployees(updatedEmployeeList);
-  };
-
+const ScheduleTable = ({ employees }) => {
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -34,9 +25,6 @@ const ScheduleTable = () => {
           })}
         </tbody>
       </table>
-      <div>
-        <AddEmployeeForm addEmployee={addEmployee} />
-      </div>
     </div>
   );
 };

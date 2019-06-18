@@ -1,7 +1,7 @@
 import React from 'react';
 import * as styles from './EmployeeRow.module.css';
 
-const EmployeeRow = ({ employee }) => {
+const EmployeeRow = ({ employee, setEditing }) => {
   const getBgColor = assignment => {
     switch (assignment) {
       case 'Manager': {
