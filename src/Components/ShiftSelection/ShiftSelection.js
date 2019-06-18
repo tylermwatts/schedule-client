@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { assignments, days, shifts } from '../../data';
 import * as styles from './ShiftSelection.module.css';
 
-const ShiftSelection = ({ day, schedule, handleChange }) => {
+const ShiftSelection = ({ day, handleChange }) => {
   const [shift2Disabled, setShift2Disabled] = useState(true);
   const [assignment1Disabled, setAssignment1Disabled] = useState(true);
   const [assignment2Disabled, setAssignment2Disabled] = useState(true);
@@ -28,7 +28,7 @@ const ShiftSelection = ({ day, schedule, handleChange }) => {
       <select
         name="shift1"
         required
-        value={schedule[day].shift1.value}
+        defaultValue=""
         onChange={e => handleShiftChange(e, day, 'shift1')}
       >
         <option value="" disabled>
@@ -42,7 +42,7 @@ const ShiftSelection = ({ day, schedule, handleChange }) => {
       </select>
       <select
         name="assignment1"
-        value={schedule[day].assignment1.value}
+        defaultValue=""
         disabled={assignment1Disabled}
         required={!assignment1Disabled}
         onChange={e => handleShiftChange(e, day, 'assignment1')}
@@ -60,7 +60,7 @@ const ShiftSelection = ({ day, schedule, handleChange }) => {
       <label>{`${days[day]} Shift Two: `}</label>
       <select
         name="shift2"
-        value={schedule[day].shift2.value}
+        defaultValue=""
         disabled={shift2Disabled}
         onChange={e => handleShiftChange(e, day, 'shift2')}
       >
@@ -75,7 +75,7 @@ const ShiftSelection = ({ day, schedule, handleChange }) => {
       </select>
       <select
         name="assignment2"
-        value={schedule[day].shift2.value}
+        defaultValue=""
         disabled={assignment2Disabled}
         onChange={e => handleShiftChange(e, day, 'assignment2')}
       >

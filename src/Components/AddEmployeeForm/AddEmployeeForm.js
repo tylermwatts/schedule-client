@@ -21,11 +21,7 @@ const AddEmployeeForm = ({ addEmployee, newEmployee }) => {
     });
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (name === '') {
-      return alert('Name cannot be empty');
-    }
+  const handleSubmit = () => {
     addEmployee({ name, schedule });
     initializeState();
     document.getElementById('add-employee-form').reset();
@@ -39,7 +35,7 @@ const AddEmployeeForm = ({ addEmployee, newEmployee }) => {
   return (
     <div className={styles.formBorder}>
       <h3>Add a new employee</h3>
-      <form id="add-employee-form">
+      <form id="add-employee-form" onSubmit={handleSubmit}>
         <label>{'Employee Name: '}</label>
         <input type="text" value={name} onChange={handleNameChange} required />
         <br />
@@ -49,13 +45,12 @@ const AddEmployeeForm = ({ addEmployee, newEmployee }) => {
               <ShiftSelection
                 key={d}
                 day={d}
-                schedule={schedule}
                 handleChange={handleScheduleChange}
               />
             );
           })}
         </>
-        <input type="submit" value="Submit" onClick={handleSubmit} />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );
