@@ -33,9 +33,13 @@ const AddEmployeeForm = ({ addEmployee, newEmployee }) => {
   };
 
   return (
-    <div className={styles.formBorder}>
+    <div className={styles.container}>
       <h3>Add a new employee</h3>
-      <form id="add-employee-form" onSubmit={handleSubmit}>
+      <form
+        className={styles.formContainer}
+        id="add-employee-form"
+        onSubmit={handleSubmit}
+      >
         <label>{'Employee Name: '}</label>
         <input type="text" value={name} onChange={handleNameChange} required />
         <br />

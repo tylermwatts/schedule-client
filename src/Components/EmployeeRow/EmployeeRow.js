@@ -97,10 +97,12 @@ const EmployeeRow = ({ employee, deleteEmployee }) => {
         )}
       </>
       <td>
-        <button>Edit</button>
+        <button className={styles.fakeLink}>Edit</button>
       </td>
-      <td style={{ backgroundColor: 'red' }}>
-        <button onClick={handleDelete}>Delete</button>
+      <td>
+        <button className={styles.fakeDelete} onClick={handleDelete}>
+          Delete
+        </button>
       </td>
     </tr>
   );
