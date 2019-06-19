@@ -19,7 +19,7 @@ const ScheduleContainer = () => {
 		employeeRepository
 			.addEmployee(newEmployee)
 			.then(response => console.log(response))
-			.catch(err => console.log(error));
+			.catch(err => console.log(err));
 	};
 
 	const deleteEmployee = id => {
