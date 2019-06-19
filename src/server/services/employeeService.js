@@ -22,7 +22,7 @@ module.exports = {
       assert.equal(null, err);
       const db = client.db('employees');
       db.collection('employee')
-        .findOne({ _id: new ObjectID(req.body.id) })
+        .findOne({ _id: new ObjectID(req.params.id) })
         .then(response => res.json(response));
     });
   },
@@ -51,7 +51,7 @@ module.exports = {
       const db = client.db('employees');
       db.collection('employee')
         .findOneAndUpdate(
-          { _id: new ObjectID(req.body.id) },
+          { _id: new ObjectID(req.params.id) },
           { $set: { name, schedule } }
         )
         .then(response => res.json(response));

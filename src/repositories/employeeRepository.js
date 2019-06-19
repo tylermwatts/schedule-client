@@ -30,6 +30,6 @@ module.exports = {
     return fetch('/api/employee/' + id, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }
-    }).then(response => response.json());
+    }).then(response => console.log(response.json()));
   }
 };
