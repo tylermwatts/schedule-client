@@ -40,7 +40,17 @@ const EmployeeRow = ({ employee, deleteEmployee }) => {
         `Are you sure you want to delete ${employee.name} from the schedule?`
       )
     ) {
-      deleteEmployee(employee._id);
+      if (
+        window.confirm(
+          `Are you REALLY sure that you want to delete ${
+            employee.name
+          } from the schedule? Pressing OK will permanently delete ${
+            employee.name
+          } from the schedule.`
+        )
+      ) {
+        deleteEmployee(employee._id);
+      }
     }
   };
 

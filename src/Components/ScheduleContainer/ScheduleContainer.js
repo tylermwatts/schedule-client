@@ -17,20 +17,24 @@ const ScheduleContainer = () => {
   }, []);
 
   const addEmployee = newEmployee => {
+    setLoading(true);
     employeeRepository
       .addEmployee(newEmployee)
       .then(response => {
         setEmployees([...employees, newEmployee]);
+        setLoading(false);
         response.json();
       })
       .catch(err => console.log(err));
   };
 
   const deleteEmployee = id => {
+    setLoading(true);
     employeeRepository
       .deleteEmployee(id)
       .then(response => {
         setEmployees(employees.filter(e => e._id !== id));
+        setLoading(false);
         alert(response.success);
       })
       .catch(err => console.log(err));
@@ -38,11 +42,12 @@ const ScheduleContainer = () => {
 
   return (
     <div>
-      <ScheduleTable employees={employees} deleteEmployee={deleteEmployee} />
-      {loading && (
+      {loading ? (
         <div style={{ textAlign: 'center' }}>
-          <h3>Loading...</h3>
+          <h3>Updating...</h3>
         </div>
+      ) : (
+        <ScheduleTable employees={employees} deleteEmployee={deleteEmployee} />
       )}
       <AddEmployeeForm addEmployee={addEmployee} newEmployee={singleEmployee} />
     </div>
