@@ -29,14 +29,21 @@ const ScheduleContainer = () => {
   const deleteEmployee = id => {
     employeeRepository
       .deleteEmployee(id)
-      .then(response => alert(response.success))
+      .then(response => {
+        setEmployees(employees.filter(e => e._id !== id));
+        alert(response.success);
+      })
       .catch(err => console.log(err));
   };
 
   return (
     <div>
       <ScheduleTable employees={employees} deleteEmployee={deleteEmployee} />
-      {loading && <div>Loading...</div>}
+      {loading && (
+        <div style={{ textAlign: 'center' }}>
+          <h3>Loading...</h3>
+        </div>
+      )}
       <AddEmployeeForm addEmployee={addEmployee} newEmployee={singleEmployee} />
     </div>
   );
