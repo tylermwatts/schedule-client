@@ -5,36 +5,41 @@ import AddEmployeeForm from '../AddEmployeeForm/AddEmployeeForm';
 import ScheduleTable from '../ScheduleTable/ScheduleTable';
 
 const ScheduleContainer = () => {
-	const [employees, setEmployees] = useState([]);
-	const newEmployee = singleEmployee;
+  const [employees, setEmployees] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-	useEffect(() => {
-		const getData = () => {
-			employeeRepository.getAllEmployees().then(data => setEmployees(data));
-		};
-		getData();
-	}, [employees]);
+  useEffect(() => {
+    setLoading(true);
+    employeeRepository.getAllEmployees().then(employeeData => {
+      setEmployees(employeeData);
+      setLoading(false);
+    });
+  }, []);
 
-	const addEmployee = newEmployee => {
-		employeeRepository
-			.addEmployee(newEmployee)
-			.then(response => console.log(response))
-			.catch(err => console.log(err));
-	};
+  const addEmployee = newEmployee => {
+    employeeRepository
+      .addEmployee(newEmployee)
+      .then(response => {
+        setEmployees([...employees, newEmployee]);
+        response.json();
+      })
+      .catch(err => console.log(err));
+  };
 
-	const deleteEmployee = id => {
-		employeeRepository
-			.deleteEmployee(id)
-			.then(response => alert(response.success))
-			.catch(err => console.log(err));
-	};
+  const deleteEmployee = id => {
+    employeeRepository
+      .deleteEmployee(id)
+      .then(response => alert(response.success))
+      .catch(err => console.log(err));
+  };
 
-	return (
-		<>
-			<ScheduleTable employees={employees} deleteEmployee={deleteEmployee} />
-			<AddEmployeeForm addEmployee={addEmployee} newEmployee={newEmployee} />
-		</>
-	);
+  return (
+    <div>
+      <ScheduleTable employees={employees} deleteEmployee={deleteEmployee} />
+      {loading && <div>Loading...</div>}
+      <AddEmployeeForm addEmployee={addEmployee} newEmployee={singleEmployee} />
+    </div>
+  );
 };
 
 export default ScheduleContainer;
