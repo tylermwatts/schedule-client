@@ -13,7 +13,9 @@ module.exports = {
         schedule: employee.schedule
       }),
       headers: { 'Content-Type': 'application/json' }
-    }).catch(err => console.log(err));
+    })
+      .then(response => response.json())
+      .catch(err => console.log(err));
   },
   editEmployee(employee) {
     return fetch('/api/employee/' + employee.id, {

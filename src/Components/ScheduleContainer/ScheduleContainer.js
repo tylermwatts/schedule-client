@@ -21,9 +21,9 @@ const ScheduleContainer = () => {
     employeeRepository
       .addEmployee(newEmployee)
       .then(response => {
-        setEmployees([...employees, newEmployee]);
+        console.log(response.employee._id);
+        setEmployees([...employees, response.employee]);
         setLoading(false);
-        response.json();
       })
       .catch(err => console.log(err));
   };
