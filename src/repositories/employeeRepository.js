@@ -18,10 +18,9 @@ module.exports = {
       .catch(err => console.log(err));
   },
   editEmployee(employee) {
-    return fetch('/api/employee/' + employee.id, {
+    return fetch('/api/employee/' + employee._id, {
       method: 'PUT',
       body: JSON.stringify({
-        id: employee._id,
         name: employee.name,
         schedule: employee.schedule
       }),

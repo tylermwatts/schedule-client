@@ -6,8 +6,12 @@ import { assignments, days, shifts } from '../../data/';
 import { singleEmployee } from '../../initial_state';
 import * as styles from './EditableDropdowns.module.css';
 
-const EditableDropdowns = ({ employee = singleEmployee }) => {
-  const [name, setName] = useState('');
+const EditableDropdowns = ({
+  employee = singleEmployee,
+  editEmployee,
+  setIsBeingEdited
+}) => {
+  const [name, setName] = useState(employee.name);
   const [schedule, setSchedule] = useState(employee.schedule);
 
   const handleScheduleChange = (e, day, key) => {
@@ -21,7 +25,13 @@ const EditableDropdowns = ({ employee = singleEmployee }) => {
   };
 
   const handleSave = () => {
-    // TODO: send the updated employee to the database
+    const updatedEmployee = {
+      _id: employee._id,
+      name: name,
+      schedule: schedule
+    };
+    editEmployee(updatedEmployee);
+    setIsBeingEdited(false);
   };
 
   return (

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import EditableDropdowns from '../EditableDropdowns/EditableDropdowns';
 import * as styles from './EmployeeRow.module.css';
 
 const EmployeeRow = ({ employee, deleteEmployee, editEmployee }) => {
-  // TODO: add boolean to track whether isBeingEdited? Conditionally render <EditableDropdowns /> or normal view
+  const [isBeingEdited, setIsBeingEdited] = useState(false);
 
   const getBgColor = assignment => {
     switch (assignment) {
@@ -56,7 +57,17 @@ const EmployeeRow = ({ employee, deleteEmployee, editEmployee }) => {
     }
   };
 
-  return (
+  const handleEdit = () => {
+    setIsBeingEdited(true);
+  };
+
+  return isBeingEdited ? (
+    <EditableDropdowns
+      employee={employee}
+      editEmployee={editEmployee}
+      setIsBeingEdited={setIsBeingEdited}
+    />
+  ) : (
     <tr className={styles.tr}>
       <>
         <td className={styles.employeeName}>{employee.name}</td>
@@ -109,7 +120,9 @@ const EmployeeRow = ({ employee, deleteEmployee, editEmployee }) => {
         )}
       </>
       <td>
-        <button className={styles.fakeLink}>Edit</button>
+        <button className={styles.fakeLink} onClick={handleEdit}>
+          Edit
+        </button>
       </td>
       <td>
         <button className={styles.fakeDelete} onClick={handleDelete}>

@@ -1,5 +1,4 @@
 import React from 'react';
-import EditableDropdowns from '../EditableDropdowns/EditableDropdowns';
 import EmployeeRow from '../EmployeeRow/EmployeeRow';
 import * as styles from './ScheduleTable.module.css';
 
@@ -31,7 +30,6 @@ const ScheduleTable = ({ employees, deleteEmployee, editEmployee }) => {
               />
             );
           })}
-          <EditableDropdowns />
         </tbody>
       </table>
     </div>

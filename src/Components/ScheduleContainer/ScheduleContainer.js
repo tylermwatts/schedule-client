@@ -21,7 +21,6 @@ const ScheduleContainer = () => {
     employeeRepository
       .addEmployee(newEmployee)
       .then(response => {
-        console.log(response.employee._id);
         setEmployees([...employees, response.employee]);
         setLoading(false);
       })
@@ -40,8 +39,23 @@ const ScheduleContainer = () => {
       .catch(err => console.log(err));
   };
 
-  const editEmployee = () => {
-    // TODO: Write editEmployee function
+  const editEmployee = updatedEmployee => {
+    setLoading(true);
+    employeeRepository
+      .editEmployee(updatedEmployee)
+      .then(response => {
+        console.log(response);
+        setEmployees(
+          employees.map(e => {
+            if (e._id === response.value._id) {
+              return response.value;
+            }
+            return e;
+          })
+        );
+        setLoading(false);
+      })
+      .catch(err => console.log(err));
   };
 
   return (
