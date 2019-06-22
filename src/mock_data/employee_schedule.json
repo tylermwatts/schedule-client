@@ -1,7 +1,7 @@
 {
 	"employees": [
 		{
-			"name": "Tyler Watts",
+			"name": "Example 1",
 			"schedule": {
 				"monday": {
 					"shift1": {
@@ -95,6 +95,109 @@
 						"value": null
 					},
 					"assignment1": {
+						"value": null
+					},
+					"assignment2": {
+						"value": null
+					}
+				}
+			}
+		},
+		{
+			"name": "Example 2",
+			"schedule": {
+				"monday": {
+					"shift1": {
+						"value": "7 - 9"
+					},
+					"assignment1": {
+						"value": "Project"
+					},
+					"shift2": {
+						"value": "9 - 3:30"
+					},
+					"assignment2": {
+						"value": "Book Desk"
+					}
+				},
+				"tuesday": {
+					"shift1": {
+						"value": "7 - 3:30"
+					},
+					"assignment1": {
+						"value": "Large Order"
+					},
+					"shift2": {
+						"value": null
+					},
+					"assignment2": {
+						"value": null
+					}
+				},
+				"wednesday": {
+					"shift1": {
+						"value": "7 - 9"
+					},
+					"assignment1": {
+						"value": "Project"
+					},
+					"shift2": {
+						"value": "9 - 3:30"
+					},
+					"assignment2": {
+						"value": "Book Desk"
+					}
+				},
+				"thursday": {
+					"shift1": {
+						"value": "7 - 3:30"
+					},
+					"assignment1": {
+						"value": "Project"
+					},
+					"shift2": {
+						"value": null
+					},
+					"assignment2": {
+						"value": null
+					}
+				},
+				"friday": {
+					"shift1": {
+						"value": "OFF"
+					},
+					"assignment1": {
+						"value": null
+					},
+					"shift2": {
+						"value": null
+					},
+					"assignment2": {
+						"value": null
+					}
+				},
+				"saturday": {
+					"shift1": {
+						"value": "OFF"
+					},
+					"assignment1": {
+						"value": null
+					},
+					"shift2": {
+						"value": null
+					},
+					"assignment2": {
+						"value": null
+					}
+				},
+				"sunday": {
+					"shift1": {
+						"value": "11 - 7"
+					},
+					"assignment1": {
+						"value": "Book Desk"
+					},
+					"shift2": {
 						"value": null
 					},
 					"assignment2": {
