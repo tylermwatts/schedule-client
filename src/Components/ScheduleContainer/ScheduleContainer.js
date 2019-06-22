@@ -44,7 +44,6 @@ const ScheduleContainer = () => {
     employeeRepository
       .editEmployee(updatedEmployee)
       .then(response => {
-        console.log(response);
         setEmployees(
           employees.map(e => {
             if (e._id === response.value._id) {
