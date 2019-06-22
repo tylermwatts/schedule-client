@@ -3,7 +3,7 @@ import EditableDropdowns from '../EditableDropdowns/EditableDropdowns';
 import EmployeeRow from '../EmployeeRow/EmployeeRow';
 import * as styles from './ScheduleTable.module.css';
 
-const ScheduleTable = ({ employees, deleteEmployee }) => {
+const ScheduleTable = ({ employees, deleteEmployee, editEmployee }) => {
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -27,6 +27,7 @@ const ScheduleTable = ({ employees, deleteEmployee }) => {
                 key={e.name}
                 employee={e}
                 deleteEmployee={deleteEmployee}
+                editEmployee={editEmployee}
               />
             );
           })}

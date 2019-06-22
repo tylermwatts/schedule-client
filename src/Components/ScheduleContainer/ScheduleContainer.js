@@ -40,6 +40,10 @@ const ScheduleContainer = () => {
       .catch(err => console.log(err));
   };
 
+  const editEmployee = () => {
+    // TODO: Write editEmployee function
+  };
+
   return (
     <div>
       {loading ? (
@@ -47,7 +51,11 @@ const ScheduleContainer = () => {
           <h3>Updating...</h3>
         </div>
       ) : (
-        <ScheduleTable employees={employees} deleteEmployee={deleteEmployee} />
+        <ScheduleTable
+          employees={employees}
+          deleteEmployee={deleteEmployee}
+          editEmployee={editEmployee}
+        />
       )}
       <AddEmployeeForm addEmployee={addEmployee} newEmployee={singleEmployee} />
     </div>

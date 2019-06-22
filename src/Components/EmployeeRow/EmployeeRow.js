@@ -1,7 +1,9 @@
 import React from 'react';
 import * as styles from './EmployeeRow.module.css';
 
-const EmployeeRow = ({ employee, deleteEmployee }) => {
+const EmployeeRow = ({ employee, deleteEmployee, editEmployee }) => {
+  // TODO: add boolean to track whether isBeingEdited? Conditionally render <EditableDropdowns /> or normal view
+
   const getBgColor = assignment => {
     switch (assignment) {
       case 'Manager': {
