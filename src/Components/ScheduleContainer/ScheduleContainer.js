@@ -3,10 +3,12 @@ import { singleEmployee } from '../../initial_state/';
 import employeeRepository from '../../repositories/employeeRepository';
 import AddEmployeeForm from '../AddEmployeeForm/AddEmployeeForm';
 import ScheduleTable from '../ScheduleTable/ScheduleTable';
+import * as styles from './ScheduleContainer.module.css';
 
 const ScheduleContainer = () => {
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [snackMessage, setSnackMessage] = useState('');
 
   useEffect(() => {
     setLoading(true);
@@ -23,6 +25,7 @@ const ScheduleContainer = () => {
       .then(response => {
         setEmployees([...employees, response.employee]);
         setLoading(false);
+        doSnackbar(newEmployee.name, 'added');
       })
       .catch(err => console.log(err));
   };
@@ -34,7 +37,7 @@ const ScheduleContainer = () => {
       .then(response => {
         setEmployees(employees.filter(e => e._id !== id));
         setLoading(false);
-        alert(response.success);
+        doSnackbar(response.value.name, 'deleted');
       })
       .catch(err => console.log(err));
   };
@@ -53,8 +56,18 @@ const ScheduleContainer = () => {
           })
         );
         setLoading(false);
+        doSnackbar(updatedEmployee.name, 'updated');
       })
       .catch(err => console.log(err));
+  };
+
+  const doSnackbar = (name, action) => {
+    setSnackMessage(`${name} has been ${action}.`);
+    const snackbar = document.getElementById('snackbar');
+    snackbar.className = [styles.snackbar, styles.snackbarShow].join(' ');
+    setTimeout(() => {
+      snackbar.className = styles.snackbar;
+    }, 3000);
   };
 
   return (
@@ -71,6 +84,9 @@ const ScheduleContainer = () => {
         />
       )}
       <AddEmployeeForm addEmployee={addEmployee} newEmployee={singleEmployee} />
+      <div id="snackbar" className={styles.snackbar}>
+        {snackMessage}
+      </div>
     </div>
   );
 };

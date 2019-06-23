@@ -68,7 +68,7 @@ module.exports = {
       db.collection('employee')
         .findOneAndDelete({ _id: employeeId })
         .then(foundEmployee => {
-          res.json({ success: `${foundEmployee.value.name} deleted.` });
+          res.json(foundEmployee);
         })
         .catch(err => console.log(err));
       client.close();
