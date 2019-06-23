@@ -25,13 +25,47 @@ const EditableDropdowns = ({
   };
 
   const handleSave = () => {
-    const updatedEmployee = {
-      _id: employee._id,
-      name: name,
-      schedule: schedule
-    };
-    editEmployee(updatedEmployee);
+    const errors = checkForErrors();
+    if (errors.length > 0) {
+      return alert(errors.join('\n'));
+    } else {
+      const updatedEmployee = {
+        _id: employee._id,
+        name: name,
+        schedule: schedule
+      };
+      editEmployee(updatedEmployee);
+      setIsBeingEdited(false);
+    }
+  };
+
+  const handleCancel = () => {
+    setName(employee.name);
+    setSchedule(employee.schedule);
     setIsBeingEdited(false);
+  };
+
+  const checkForErrors = () => {
+    const errors = [];
+    Object.keys(days).forEach(d => {
+      if (
+        schedule[d].shift1.value !== 'OFF' &&
+        schedule[d].assignment1.value === null
+      ) {
+        errors.push(
+          `${d} has hours assigned to Shift One but no task assignment.`
+        );
+      }
+      if (
+        schedule[d].shift2.value !== null &&
+        schedule[d].assignment2.value === null
+      ) {
+        errors.push(
+          `${d} has hours assigned to Shift Two but no task assignment.`
+        );
+      }
+    });
+    return errors;
   };
 
   return (
@@ -124,6 +158,9 @@ const EditableDropdowns = ({
       })}
       <td>
         <button onClick={handleSave}>Save</button>
+      </td>
+      <td>
+        <button onClick={handleCancel}>Cancel</button>
       </td>
     </tr>
   );
