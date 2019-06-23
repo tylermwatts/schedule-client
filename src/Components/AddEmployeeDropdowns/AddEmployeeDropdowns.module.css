@@ -1,6 +1,7 @@
 .select {
   border: 0.5;
   font-size: 0.8em;
+  width: auto;
 }
 
 .formBody {
@@ -9,7 +10,12 @@
   grid-template-rows: 3;
 }
 
+.formContainer {
+  margin-bottom: 3em;
+}
+
 .gridCell {
+  white-space: nowrap;
   grid-row-start: 2;
   grid-row-end: 4;
 }

@@ -9,6 +9,7 @@ const ScheduleTable = ({ employees, deleteEmployee, editEmployee }) => {
         <tbody className={styles.tbodyContainer}>
           <tr>
             <th colSpan="8" className={styles.dateHeader}>{`6/17/19`}</th>
+            {/* TODO: Can I update the date bro? */}
           </tr>
           <tr>
             <th className={styles.thEmployee}>{'Employee'}</th>
