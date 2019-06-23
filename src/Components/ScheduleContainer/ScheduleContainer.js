@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { singleEmployee } from '../../initial_state/';
 import employeeRepository from '../../repositories/employeeRepository';
-import AddEmployeeForm from '../AddEmployeeForm/AddEmployeeForm';
+import AddEmployeeDropdowns from '../AddEmployeeDropdowns/AddEmployeeDropdowns';
 import ScheduleTable from '../ScheduleTable/ScheduleTable';
 import * as styles from './ScheduleContainer.module.css';
 
@@ -83,7 +83,10 @@ const ScheduleContainer = () => {
           editEmployee={editEmployee}
         />
       )}
-      <AddEmployeeForm addEmployee={addEmployee} newEmployee={singleEmployee} />
+      <AddEmployeeDropdowns
+        addEmployee={addEmployee}
+        newEmployee={singleEmployee}
+      />
       <div id="snackbar" className={styles.snackbar}>
         {snackMessage}
       </div>

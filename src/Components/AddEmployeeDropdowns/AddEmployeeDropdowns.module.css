@@ -1,0 +1,62 @@
+.select {
+  border: 0.5;
+  font-size: 0.8em;
+}
+
+.formBody {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 3;
+}
+
+.gridCell {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.gridTop {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.gridBottom {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.submitButton {
+  border: 0.5;
+  padding: 0.8em;
+  font-weight: 600;
+  color: white;
+  background-color: blue;
+  place-self: center;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 9;
+  grid-column-end: 10;
+}
+
+.addEmployeeText {
+  text-decoration: underline;
+  text-align: center;
+  margin: auto;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.nameInput {
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.dayMarker {
+  text-align: center;
+  text-decoration: underline;
+  margin: 0;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}

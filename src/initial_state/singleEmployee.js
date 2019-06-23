@@ -3,100 +3,100 @@ export default {
   schedule: {
     monday: {
       shift1: {
-        value: null
+        value: 'OFF'
       },
       shift2: {
-        value: null
+        value: ''
       },
       assignment1: {
-        value: null
+        value: ''
       },
       assignment2: {
-        value: null
+        value: ''
       }
     },
     tuesday: {
       shift1: {
-        value: null
+        value: 'OFF'
       },
       shift2: {
-        value: null
+        value: ''
       },
       assignment1: {
-        value: null
+        value: ''
       },
       assignment2: {
-        value: null
+        value: ''
       }
     },
     wednesday: {
       shift1: {
-        value: null
+        value: 'OFF'
       },
       shift2: {
-        value: null
+        value: ''
       },
       assignment1: {
-        value: null
+        value: ''
       },
       assignment2: {
-        value: null
+        value: ''
       }
     },
     thursday: {
       shift1: {
-        value: null
+        value: 'OFF'
       },
       shift2: {
-        value: null
+        value: ''
       },
       assignment1: {
-        value: null
+        value: ''
       },
       assignment2: {
-        value: null
+        value: ''
       }
     },
     friday: {
       shift1: {
-        value: null
+        value: 'OFF'
       },
       shift2: {
-        value: null
+        value: ''
       },
       assignment1: {
-        value: null
+        value: ''
       },
       assignment2: {
-        value: null
+        value: ''
       }
     },
     saturday: {
       shift1: {
-        value: null
+        value: 'OFF'
       },
       shift2: {
-        value: null
+        value: ''
       },
       assignment1: {
-        value: null
+        value: ''
       },
       assignment2: {
-        value: null
+        value: ''
       }
     },
     sunday: {
       shift1: {
-        value: null
+        value: 'OFF'
       },
       shift2: {
-        value: null
+        value: ''
       },
       assignment1: {
-        value: null
+        value: ''
       },
       assignment2: {
-        value: null
+        value: ''
       }
     }
   }

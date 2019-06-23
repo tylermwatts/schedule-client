@@ -1,6 +1,3 @@
-// This is an experimental component that I am using to work out how I want to handle
-// being able to edit an employee's schedule with inline dropdown selects
-
 import React, { useState } from 'react';
 import { assignments, days, shifts } from '../../data/';
 import { singleEmployee } from '../../initial_state';
@@ -50,18 +47,22 @@ const EditableDropdowns = ({
     Object.keys(days).forEach(d => {
       if (
         schedule[d].shift1.value !== 'OFF' &&
-        schedule[d].assignment1.value === null
+        schedule[d].assignment1.value === ''
       ) {
         errors.push(
-          `${d} has hours assigned to Shift One but no task assignment.`
+          `${employee.name} has hours assigned to Shift One on ${
+            days[d]
+          } but no task assignment.`
         );
       }
       if (
-        schedule[d].shift2.value !== null &&
-        schedule[d].assignment2.value === null
+        schedule[d].shift2.value !== '' &&
+        schedule[d].assignment2.value === ''
       ) {
         errors.push(
-          `${d} has hours assigned to Shift Two but no task assignment.`
+          `${employee.name} has hours assigned to Shift Two on ${
+            days[d]
+          } but no task assignment.`
         );
       }
     });
@@ -106,7 +107,7 @@ const EditableDropdowns = ({
                   className={styles.select}
                   defaultValue={schedule[d].assignment1.value || ''}
                 >
-                  <option>--</option>
+                  <option value="">--</option>
                   {assignments.map(a1 => {
                     return (
                       <option key={`1 ${d} ${a1}`} value={a1}>
@@ -125,7 +126,7 @@ const EditableDropdowns = ({
                   className={styles.select}
                   defaultValue={schedule[d].shift2.value || ''}
                 >
-                  <option value="">{'--'}</option>
+                  <option value="">--</option>
                   {shifts.map(s2 => {
                     return (
                       <option key={`2 ${d} ${s2}`} value={s2}>
@@ -142,7 +143,7 @@ const EditableDropdowns = ({
                   className={styles.select}
                   defaultValue={schedule[d].assignment2.value || ''}
                 >
-                  <option>--</option>
+                  <option value="">--</option>
                   {assignments.map(a2 => {
                     return (
                       <option key={`2 ${d} ${a2}`} value={a2}>
