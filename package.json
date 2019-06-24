@@ -2,7 +2,7 @@
   "name": "schedule",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://warpfox-schedule-server.herokuapp.com",
   "dependencies": {
     "dotenv": "^8.0.0",
     "react": "^16.8.6",
