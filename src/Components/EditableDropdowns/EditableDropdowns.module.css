@@ -1,4 +1,13 @@
 .select {
+  max-width: 80px;
   border: 0.5;
   font-size: 0.8em;
+}
+
+.dayCell {
+  text-align: center;
+}
+
+.cellBorder {
+  border: 1px solid black;
 }

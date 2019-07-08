@@ -6,7 +6,7 @@ import * as styles from './EditableDropdowns.module.css';
 const EditableDropdowns = ({
   employee = singleEmployee,
   editEmployee,
-  setIsBeingEdited
+  setIsBeingEdited,
 }) => {
   const [name, setName] = useState(employee.name);
   const [schedule, setSchedule] = useState(employee.schedule);
@@ -16,8 +16,8 @@ const EditableDropdowns = ({
       ...schedule,
       [day]: {
         ...schedule[day],
-        [key]: { value: e.target.value }
-      }
+        [key]: { value: e.target.value },
+      },
     });
   };
 
@@ -29,7 +29,7 @@ const EditableDropdowns = ({
       const updatedEmployee = {
         _id: employee._id,
         name: name,
-        schedule: schedule
+        schedule: schedule,
       };
       editEmployee(updatedEmployee);
       setIsBeingEdited(false);
@@ -82,8 +82,8 @@ const EditableDropdowns = ({
       </td>
       {Object.keys(days).map(d => {
         return (
-          <td key={d}>
-            <div>
+          <td key={d} className={styles.cellBorder}>
+            <div className={styles.dayCell}>
               <span>
                 <select
                   name={`${d} shift1`}
@@ -118,7 +118,7 @@ const EditableDropdowns = ({
                 </select>
               </span>
             </div>
-            <div>
+            <div className={styles.dayCell}>
               <span>
                 <select
                   name={`${d} shift2`}
